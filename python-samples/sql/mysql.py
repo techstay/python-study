@@ -17,7 +17,7 @@ birthday DATE
 
 insert_table_sql = """\
 INSERT INTO fuck(username,nickname,birthday)
- VALUES('{username}','{nickname}','{birthday}')
+ VALUES(%s,%s,%s)
 """
 
 query_table_sql = """\
@@ -46,14 +46,10 @@ try:
         connection.commit()
 
         print('--------------插入数据--------------')
-        cursor.execute(
-            insert_table_sql.format(username='yitian', nickname='易天', birthday=datetime.date.today()))
-        cursor.execute(
-            insert_table_sql.format(username='zhang3', nickname='张三', birthday=datetime.date.today()))
-        cursor.execute(
-            insert_table_sql.format(username='li4', nickname='李四', birthday=datetime.date.today()))
-        cursor.execute(
-            insert_table_sql.format(username='wang5', nickname='王五', birthday=datetime.date.today()))
+        cursor.execute(insert_table_sql, ('yitian', '易天', datetime.date.today()))
+        cursor.execute(insert_table_sql, ('zhang3', '张三', datetime.date.today()))
+        cursor.execute(insert_table_sql, ('li4', '李四', datetime.date.today()))
+        cursor.execute(insert_table_sql, ('wang5', '王五', datetime.date.today()))
         connection.commit()
 
         print('--------------查询数据--------------')
@@ -67,9 +63,8 @@ try:
         cursor.execute(delete_table_sql)
         connection.commit()
 
-        print('--------------删除表--------------')
-        cursor.execute(drop_table_sql)
-        connection.commit()
-
 finally:
+    print('--------------删除表--------------')
+    connection.cursor().execute(drop_table_sql)
+    connection.commit()
     connection.close()
