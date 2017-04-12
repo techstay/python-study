@@ -1,0 +1,6 @@
+{% extends 'layout.html' %}
+{% block title %}页面未找到{% endblock %}
+{% block body %}
+    <h1>你要的页面好像没有呢</h1>
+    <img src="{{ url_for('static',filename='images/404.png') }}" alt="404">
+{% endblock %}

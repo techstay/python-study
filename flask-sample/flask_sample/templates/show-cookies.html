@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}cookies{% endblock %}
+{% block body %}
+    <h1>cookies</h1>
+    <table class="table table-bordered table-responsive table-hover table-striped">
+        <thead>
+        <tr>
+            <td>cookies名</td>
+            <td>cookies值</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for k,v in cookies.items() %}
+            <tr>
+                <td>{{ k }}</td>
+                <td>{{ v }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

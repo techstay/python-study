@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-theme.css') }}"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href={{ url_for('index') }}>Flask小例子</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">路径变量<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('greet', name='易天') }}">问候1</a></li>
+                        <li><a href="{{ url_for('greet2', name='易天2') }}">问候2</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">请求数据<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('get_request_data',name='易天',age=25,gender='MALE') }}">获取参数</a>
+                        </li>
+                        <li><a href="{{ url_for('get_form') }}">表单提交</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">错误和重定向<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('static',filename='404') }}">404错误</a></li>
+                        <li><a href="{{ url_for('redirect_to_index') }}">重定向到主页</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Cookies<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('add_cookie') }}">添加cookie</a></li>
+                        <li><a href="{{ url_for('show_cookies') }}">显示cookie</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container body-content">
+    {% block body %}{% endblock %}
+</div>
+
+<div class="container footer">
+    <hr>
+    <p>这是页脚</p>
+</div>
+
+<script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+
+</body>
+</html>
