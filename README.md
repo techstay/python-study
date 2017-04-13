@@ -13,3 +13,6 @@
 添加了flask的简单例子，演示了基本使用方法。
 
 ![运行截图](flask-sample/flask-sample.PNG)
+
+## scrapy_sample
+添加了Scrapy爬虫框架的例子。
