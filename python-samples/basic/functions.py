@@ -67,10 +67,33 @@ im_a_lambda = lambda a, b: a + b
 print(f'a+b={im_a_lambda(3,4)}')
 
 print('--------------文档字符串--------------')
+
+
 def function_with_documents():
     '''\
 这是一个文档字符串
     '''
     pass
 
+
 print(f'文档:{function_with_documents.__doc__}')
+
+print('--------------装饰器--------------')
+
+
+def surround_decorator(func):
+    def new_func(*args, **kargs):
+        print('func_start')
+        result = func(*args, **kargs)
+        print('func_end')
+        return result
+
+    return new_func
+
+
+@surround_decorator
+def hello():
+    print('Hello !')
+
+
+hello()
