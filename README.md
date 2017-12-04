@@ -20,8 +20,8 @@
 ## introducing-python-answers
 《python语言及其应用》的习题答案。
 
-## codeofempire
-[Code of Empire](https://checkio.org/)的答案。
+## empireofcode
+[Empire of Code](https://checkio.org/)的答案。
 
 ## tieba-tools
 一点点百度贴吧工具，以后会慢慢补充。
