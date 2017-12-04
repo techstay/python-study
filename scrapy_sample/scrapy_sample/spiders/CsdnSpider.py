@@ -14,7 +14,9 @@ class CsdnBlogSpider(scrapy.Spider):
     def parse(self, response):
         articles = response.css('div#article_list div.article_item')
         for article in articles:
-            title = article.css('div.article_title a::text').extract_first().strip()
+            list1 = article.css('div.article_title a::text').extract()
+            list2 = [e.strip() for e in list1 if e.strip()]
+            title = list2[0]
             link = self.base_url + article.css('div.article_title a::attr(href)').extract_first().strip()
             yield {'title': title, 'link': link}
 
