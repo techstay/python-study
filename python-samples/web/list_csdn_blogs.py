@@ -47,7 +47,6 @@ class CsdnHelper:
 
     def _get_blog_count(self):
         '''获取文章数和页数'''
-        self._validate_redirect_url()
         response = self._session.get(CsdnHelper.blog_url)
         blog_page = BeautifulSoup(response.text, 'lxml')
         span = blog_page.find('div', class_='page_nav').span
@@ -56,13 +55,7 @@ class CsdnHelper:
         result = pattern.findall(span.string)
         blog_count = int(result[0][0])
         page_count = int(result[0][1])
-        return (blog_count, page_count)
-
-    def _validate_redirect_url(self):
-        '''验证重定向网页'''
-        response = self._session.get(CsdnHelper.blog_url)
-        redirect_url = re.findall(r'var redirect = "(\S+)";', response.text)[0]
-        self._session.get(redirect_url)
+        return blog_count, page_count
 
     def print_blogs(self):
         '''输出文章信息'''
