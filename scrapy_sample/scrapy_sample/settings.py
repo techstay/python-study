@@ -15,15 +15,20 @@ SPIDER_MODULES = ['scrapy_sample.spiders']
 NEWSPIDER_MODULE = 'scrapy_sample.spiders'
 FEED_EXPORT_ENCODING = 'utf-8'
 
+MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_DATABASE = 'budejie'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'scrapy_sample (+http://www.yourdomain.com)'
+# USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
+# LOG_LEVEL = 'INFO'
+# LOG_LEVEL = 'INFO'
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
@@ -37,7 +42,6 @@ ROBOTSTXT_OBEY = True
 
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
-
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -64,17 +68,19 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'scrapy_sample.pipelines.ScrapySamplePipeline': 300,
-# }
-
+ITEM_PIPELINES = {
+    # 'scrapy.pipelines.images.ImagesPipeline': 1,
+    'scrapy_sample.pipelines.CsdnBlogBackupPipeline': 2
+}
+REDIRECT_ENABLED = False
+IMAGES_STORE = 'images'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
-# AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-# AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 3
 # The maximum download delay to be set in case of high latencies
-# AUTOTHROTTLE_MAX_DELAY = 60
+AUTOTHROTTLE_MAX_DELAY = 5
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 # AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
