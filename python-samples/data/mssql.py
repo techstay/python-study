@@ -1,5 +1,6 @@
 import pyodbc
 import datetime
+
 server = 'tcp:localhost'
 database = 'test'
 username = 'sa'
@@ -23,8 +24,8 @@ select_one_sql = '''SELECT * FROM author WHERE name = ?'''
 
 drop_table_sql = '''DROP TABLE author'''
 
-connection = connection = pyodbc.connect(
-    'DRIVER={ODBC Driver 13 for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+connection = pyodbc.connect(
+    f'DRIVER={"ODBC Driver 13 for SQL Server"};SERVER={server};DATABASE={database};UID={username};PWD={password}')
 
 # 设置自动提交
 connection.autocommit = True
