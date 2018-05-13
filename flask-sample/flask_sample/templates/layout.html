@@ -10,55 +10,61 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ url_for('index') }}">Flask小例子</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="routeVariable" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    路径变量
-                </a>
-                <div class="dropdown-menu" aria-labelledby="routeVariable">
-                    <a class="dropdown-item" href="{{ url_for('greet', name='易天') }}">问候1</a>
-                    <a class="dropdown-item" href="{{ url_for('greet2', name='易天2') }}">问候2</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="requestData" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    请求数据
-                </a>
-                <div class="dropdown-menu" aria-labelledby="requestData">
-                    <a class="dropdown-item" href="{{ url_for('get_request_data',name='易天',age=25,gender='MALE') }}">获取参数</a>
-                    <a class="dropdown-item" href="{{ url_for('get_form') }}">表单提交</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="routeVariable" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    错误和重定向
-                </a>
-                <div class="dropdown-menu" aria-labelledby="routeVariable">
-                    <a class="dropdown-item" href="{{ url_for('static',filename='404') }}">404错误</a>
-                    <a class="dropdown-item" href="{{ url_for('redirect_to_index') }}">重定向到主页</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="routeVariable" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Cookie
-                </a>
-                <div class="dropdown-menu" aria-labelledby="routeVariable">
-                    <a class="dropdown-item" href="{{ url_for('add_cookie') }}">添加cookie</a>
-                    <a class="dropdown-item" href="{{ url_for('show_cookies') }}">显示cookie</a>
-                </div>
-            </li>
-        </ul>
+
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Flask小例子</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="routeVariable" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        路径变量
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="routeVariable">
+                        <a class="dropdown-item" href="{{ url_for('greet', name='易天') }}">问候1</a>
+                        <a class="dropdown-item" href="{{ url_for('greet2', name='易天2') }}">问候2</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="requestData" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        请求数据
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="requestData">
+                        <a class="dropdown-item"
+                           href="{{ url_for('get_request_data',name='易天',age=25,gender='MALE') }}">获取参数</a>
+                        <a class="dropdown-item" href="{{ url_for('get_form') }}">表单提交</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="routeVariable" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        错误和重定向
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="routeVariable">
+                        <a class="dropdown-item" href="{{ url_for('static',filename='404') }}">404错误</a>
+                        <a class="dropdown-item" href="{{ url_for('redirect_to_index') }}">重定向到主页</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="routeVariable" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Cookie
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="routeVariable">
+                        <a class="dropdown-item" href="{{ url_for('add_cookie') }}">添加cookie</a>
+                        <a class="dropdown-item" href="{{ url_for('show_cookies') }}">显示cookie</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
+
 </nav>
 
 <main class="container" role="main">
