@@ -1,30 +1,33 @@
 {% extends 'layout.html' %}
 {% block title %}提交表单{% endblock %}
 {% block body %}
-    <div class="col-md-6 col-md-offset-3">
-        <form id="form" action="{{ url_for('submit_form') }}" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="name">姓名</label>
-                <input type="text" class="form-control" name="name" id="name"
-                       placeholder="请输入姓名">
-            </div>
-            <div class="form-group">
-                <label for="nickname">昵称</label>
-                <input type="text" class="form-control" name="nickname" id="nickname"
-                       placeholder="请输入昵称">
-            </div>
-            <div class="form-group">
-                <label for="birthday">生日</label>
-                <input type="date" class="form-control" name="birthday" id="birthday"
-                       placeholder="请输入生日">
-            </div>
-            <div class="form-group">
-                <label for="file">文件</label>
-                <input type="file" class="form-control" name="file" id="file">
-            </div>
-            <button class="button btn-success" form="form">提交</button>
-        </form>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form id="form" action="{{ url_for('submit_form') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" class="form-control" name="name" id="name"
+                           placeholder="请输入姓名">
+                </div>
+                <div class="form-group">
+                    <label for="nickname">昵称</label>
+                    <input type="text" class="form-control" name="nickname" id="nickname"
+                           placeholder="请输入昵称">
+                </div>
+                <div class="form-group">
+                    <label for="birthday">生日</label>
+                    <input type="date" class="form-control" name="birthday" id="birthday"
+                           placeholder="请输入生日">
+                </div>
+                <div class="form-group">
+                    <label for="file">文件</label>
+                    <input type="file" class="form-control" name="file" id="file">
+                </div>
+                <button class="btn btn-success" form="form">提交</button>
+            </form>
+        </div>
     </div>
+
 
 
 {% endblock %}

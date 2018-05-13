@@ -40,7 +40,7 @@ def submit_form():
         app.logger.debug(f'filename:{file.filename}')
         app.logger.debug(f'secure_filename:{secure_filename(file.filename)}')
         file.save(f'uploaded_files/{file.filename}')
-
+    app.logger.debug(form)
     return render_template('form-result.html', data=form)
 
 
@@ -85,10 +85,7 @@ def get_uploaded_file():
 def before_request():
     import glob
     files = glob.glob('uploaded_files/*')
-    flist = []
-    for f in files:
-        flist.append(f)
-    session['files'] = flist
+    session['files'] = files
 
 
 if __name__ == '__main__':
