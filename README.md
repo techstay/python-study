@@ -6,7 +6,8 @@
 我的Python基础练习代码。
 
   - basic 。 基础练习。
-  - sql 。数据库练习
+  - data 。sql和nosql数据库的示例代码。
+  - web。爬虫相关类库的代码。
   
 ## flask-sample
 
@@ -21,7 +22,10 @@
 《python语言及其应用》的习题答案。
 
 ## empireofcode
-[Empire of Code](https://checkio.org/)的答案。
+[Empire of Code](https://checkio.org/)的一些答案。
+
+## checkio
+[checkio](https://checkio.org/)的一些答案。
 
 ## tieba-tools
 一点点百度贴吧工具，以后会慢慢补充。
