@@ -1,4 +1,4 @@
-from  pymongo import MongoClient
+from pymongo import MongoClient
 from pprint import pprint
 
 # 连接数据库
