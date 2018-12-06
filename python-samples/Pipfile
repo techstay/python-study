@@ -11,6 +11,7 @@ pymysql = "*"
 requests = "*"
 requests-html = "*"
 "beautifulsoup4" = "*"
+faker = "*"
 
 [dev-packages]
 pylint = "*"
