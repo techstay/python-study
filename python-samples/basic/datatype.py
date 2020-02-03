@@ -201,5 +201,3 @@ print('--------------列表解析--------------')
 
 cubeList = [i ** 3 for i in range(1, 10)]
 print(f'cubeList:{cubeList}')
-
-

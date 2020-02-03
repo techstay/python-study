@@ -99,7 +99,7 @@ print(f'today:{today}')
 print(f'now:{now}')
 
 my_age = today - datetime.date(1994, 7, 7)
-print(f'my age:{my_age.days/365}')
+print(f'my age:{my_age.days / 365}')
 
 print('--------------zlib--------------')
 

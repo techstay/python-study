@@ -16,5 +16,3 @@ else:
     print('Else clause')
 finally:
     print('This is finally clause')
-
-

@@ -32,8 +32,7 @@ else:
 print('--------------跳转语句--------------')
 for i in range(1, 5):
     for j in range(1, i + 1):
-        if (i <= j):
+        if i <= j:
             continue
-        print(f'[{i},{j}]',end='')
+        print(f'[{i},{j}]', end='')
 print()
-

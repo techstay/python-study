@@ -47,10 +47,10 @@ Person.introduce_myself(xiaoming)
 
 print('--------------继承关系--------------')
 
-print(f'xiaoming is Student:{isinstance(xiaoming,Student)}')
-print(f'xiaoming is Person:{isinstance(xiaoming,Person)}')
-print(f'Student is Person:{issubclass(Student,Person)}')
-print(f'Person is Student:{issubclass(Person,Student)}')
+print(f'xiaoming is Student:{isinstance(xiaoming, Student)}')
+print(f'xiaoming is Person:{isinstance(xiaoming, Person)}')
+print(f'Student is Person:{issubclass(Student, Person)}')
+print(f'Person is Student:{issubclass(Person, Student)}')
 
 print('--------------结构体--------------')
 
@@ -121,4 +121,3 @@ odd_list = [i for i in range(1, 11) if i % 2 != 0]
 
 print(f'generator type:{type(odd_generator)}')
 print(f'list type:{type(odd_list)}')
-

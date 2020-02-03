@@ -64,7 +64,7 @@ print('--------------lambda函数--------------')
 
 im_a_lambda = lambda a, b: a + b
 
-print(f'a+b={im_a_lambda(3,4)}')
+print(f'a+b={im_a_lambda(3, 4)}')
 
 print('--------------文档字符串--------------')
 

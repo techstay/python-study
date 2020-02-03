@@ -42,7 +42,7 @@ print('这是一段输出', '下一段输出', sep=',', end='\n')
 print('--------------九九乘法表--------------')
 for i in range(1, 10):
     for j in range(1, i + 1):
-        print(f'{j}X{i}={i*j:<5}', end='')
+        print(f'{j}X{i}={i * j:<5}', end='')
     print()
 
 print('--------------open内置函数--------------')
@@ -69,7 +69,7 @@ print(f'string1:{string1}')
 
 personal_info = {'name': 'yitian', 'age': 24, 'gender': 'male'}
 string2 = json.dumps(personal_info)
-print(f'string2:{string2 }')
+print(f'string2:{string2}')
 
 json1 = json.loads('[1,2,3,4,"5"]')
 print(f'json1:{json1}')
