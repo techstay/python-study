@@ -27,11 +27,7 @@ def meizitu(url):
     save_folder = folder/title
     if not save_folder.exists():
         save_folder.mkdir()
-    image_url = r.html.xpath(
-        '//div[@class="main-image"]//img/@src[1]', first=True)
-    save_image(image_url, save_folder/'1.jpg',
-               headers={'User-Agent': ua, 'Referer': base_url})
-    for i in range(2, total_page+1):
+    for i in range(1, total_page+1):
         r = session.get(url+f'/{i}',
                         headers={'User-Agent': ua, 'Referer': referer})
         image_url = r.html.xpath('//div[@class="main-image"]//img/@src[1]',
@@ -41,4 +37,6 @@ def meizitu(url):
         referer = url+f'/{i}'
 
 
+meizitu('https://www.mzitu.com/241840')
 meizitu('https://www.mzitu.com/245521')
+meizitu('https://www.mzitu.com/24666')
