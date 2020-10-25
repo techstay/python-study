@@ -28,7 +28,7 @@ Python语言和一些第三方类库的简单示例。
 
 [checkio](https://checkio.org/)的一些答案。
 
-## B站首届安全挑战赛
+## bilibili_ctf
 
 B站首届安全挑战赛的代码。
 
