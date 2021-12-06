@@ -11,6 +11,8 @@ Faker = "^9.9.0"
 pymongo = "^4.0"
 PyMySQL = "^1.0.2"
 psycopg2 = "^2.9.2"
+pendulum = "^2.1.2"
+ipykernel = "^6.6.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.12.2"
