@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "python-sample"
+version = "0.1.0"
+description = ""
+authors = ["techstay <lovery521@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.26.0"
+Faker = "^9.9.0"
+pymongo = "^4.0"
+PyMySQL = "^1.0.2"
+psycopg2 = "^2.9.2"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+pylint = "^2.12.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
