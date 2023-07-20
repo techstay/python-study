@@ -1,24 +1,24 @@
 # python-study
 
-我的Python学习代码。
+我的 Python 学习代码。
 
 ## python-samples
 
-Python语言和一些第三方类库的简单示例。
+Python 语言和一些第三方类库的简单示例。
 
 ## flask-sample
 
-添加了flask的简单例子，演示了基本使用方法。
+添加了 flask 的简单例子，演示了基本使用方法。
 
 ![运行截图](flask-sample/flask-sample.PNG)
 
 ## scrapy_sample
 
-添加了Scrapy爬虫框架的例子。
+添加了 Scrapy 爬虫框架的例子。
 
 ## introducing-python-answers
 
-《python语言及其应用》的习题答案。
+《python 语言及其应用》的习题答案。
 
 ## empireofcode
 
@@ -30,7 +30,7 @@ Python语言和一些第三方类库的简单示例。
 
 ## bilibili_ctf
 
-B站首届安全挑战赛的代码。
+B 站首届安全挑战赛的代码。
 
 ## tieba-tools
 
