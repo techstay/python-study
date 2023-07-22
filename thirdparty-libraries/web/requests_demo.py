@@ -11,39 +11,72 @@ headers = {
 
 # %%
 
-response = requests.get(f"{base_url}get", headers=headers)
+response = requests.get(
+    f"{base_url}get",
+    headers=headers,
+)
 print(response.text)
 
 # %%
-params = {"name": "jack", "age": 16, "friends": ["zhang3", "li4"]}
+params = {
+    "name": "jack",
+    "age": 16,
+    "friends": ["zhang3", "li4"],
+}
 
-response = requests.get(f"{base_url}get", params=params)
+response = requests.get(
+    f"{base_url}get",
+    params=params,
+)
 print(response.text)
 
 # %%
 
-data = {"name": "jack", "age": 16, "friends": ["zhang3", "li4"]}
-response = requests.post(f"{base_url}post", data=data)
+data = {
+    "name": "jack",
+    "age": 16,
+    "friends": ["zhang3", "li4"],
+}
+response = requests.post(
+    f"{base_url}post",
+    data=data,
+)
 print(response.text)
 
 # %%
 
-data = {"name": "jack", "age": 16, "friends": ["zhang3", "li4"]}
-response = requests.post(f"{base_url}post", data=json.dumps(data))
+data = {
+    "name": "jack",
+    "age": 16,
+    "friends": ["zhang3", "li4"],
+}
+response = requests.post(
+    f"{base_url}post",
+    data=json.dumps(data),
+)
 print(response.text)
 
 # %%
-response = requests.post(f"{base_url}post", json=data)
+response = requests.post(
+    f"{base_url}post",
+    json=data,
+)
 
 print(response.text)
 
 # %%
 # 发送文件
-file = open(r"C:\Windows\System32\drivers\etc\hosts", mode="rb")
+file = open(
+    r"C:\Windows\System32\drivers\etc\hosts",
+    mode="rb",
+)
 
 data = {"file": file}
 
-response = requests.post(f"{base_url}post", files=data)
+response = requests.post(
+    f"{base_url}post",
+    files=data,
+)
 print(response.text)
 
 # %%
@@ -51,7 +84,10 @@ print(response.text)
 # 获取cookies
 
 baidu_url = "https://www.baidu.com"
-response = requests.get(baidu_url, headers=headers)
+response = requests.get(
+    baidu_url,
+    headers=headers,
+)
 print(response.cookies)
 
 # %%
@@ -61,7 +97,21 @@ print(response.cookies)
 cookies = requests.cookies.RequestsCookieJar()
 cookies.set("name", "jack")
 cookies.set("age", "18")
-response = requests.get(f"{base_url}cookies", cookies=cookies)
+response = requests.get(
+    f"{base_url}cookies",
+    cookies=cookies,
+)
+print(response.text)
+
+# %%
+
+# authentication
+response = requests.get(
+    f"{base_url}/get",
+    headers=headers,
+    auth=("user", "techstay"),
+)
+
 print(response.text)
 
 # %%

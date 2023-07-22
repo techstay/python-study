@@ -14,6 +14,8 @@ dependencies = [
     "pymongo>=4.4.1",
     "pyodbc>=4.0.39",
     "openpyxl>=3.1.2",
+    "reactivex>=4.0.4",
+    "requests-html>=0.10.0",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
