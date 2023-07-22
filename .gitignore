@@ -2,7 +2,11 @@
 ### Example user template template
 ### Example user template
 
+# ignore images
 images/
+
+# pdm ignores
+.pdm-python
 
 # VSCode
 .vscode/

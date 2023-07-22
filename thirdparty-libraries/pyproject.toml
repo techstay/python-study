@@ -1,0 +1,27 @@
+[project]
+name = "thirdparty-libraries"
+version = "1.0"
+description = "my python 3rd party libraries demos"
+authors = [
+    {name = "techstay", email = "lovery521@gmail.com"},
+]
+dependencies = [
+    "faker>=19.2.0",
+    "pendulum>=2.1.2",
+    "requests>=2.31.0",
+    "psycopg2>=2.9.6",
+    "pymysql>=1.1.0",
+    "pymongo>=4.4.1",
+    "pyodbc>=4.0.39",
+    "openpyxl>=3.1.2",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "bandit>=1.7.5",
+    "flake8>=6.0.0",
+    "ipykernel>=6.24.0",
+]
