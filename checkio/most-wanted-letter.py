@@ -7,12 +7,13 @@ def checkio(text):
         else:
             d[c] += 1
     from operator import itemgetter
+
     items = sorted(d.items(), key=itemgetter(0))
     items = sorted(items, key=itemgetter(1), reverse=True)
     return items[0][0]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio("Hello World!") == "l", "Hello test"
     assert checkio("How do you do?") == "o", "O is most wanted"

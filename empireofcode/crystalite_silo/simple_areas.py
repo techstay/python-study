@@ -1,5 +1,6 @@
 def simple_areas(*args):
     import math
+
     if len(args) == 1:
         return math.pi * args[0] ** 2 / 4
     elif len(args) == 2:
@@ -12,12 +13,11 @@ def simple_areas(*args):
         return math.sqrt((p - a) * (p - b) * (p - c) * p)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # These "asserts" using only for self-checking and not necessary for auto-testing
     def almost_equal(checked, correct, significant_digits=2):
-        precision = 0.1 ** significant_digits
+        precision = 0.1**significant_digits
         return correct - precision < checked < correct + precision
-
 
     assert almost_equal(simple_areas(3), 7.07), "Circle"
     assert almost_equal(simple_areas(2, 2), 4), "Square"
