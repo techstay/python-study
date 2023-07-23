@@ -1,10 +1,12 @@
 # python-study
 
+**注意：之前我的很多代码练习都是分项目存放的，最后搞得很乱，现在整理到了一起，本项目将存档，变为只读状态。如果有后续更新的话，统一放到[我的学习笔记](https://github.com/techstay/studyNotes/tree/main/python)项目里。**
+
 我的 python 学习笔记。
 
 - [python-sample](./python-sample/README.md)，一些 Python 语言的示例
 - [thirdparty-libraries](./thirdparty-libraries/README.md)，一些 PPython 第三方类库的示例
-- checkio 和[empireofcode](./empireofcode/README.md)，两者的练习题
+- checkio 和[empireofcode](./empireofcode/README.md)，两者的练习题，做了一点就弃坑了
 - [scrapy-sample](./scrapy-sample)，scrapy 类库的爬虫示例
 - enjoybeautiful，使用爬虫爬取福利图片的代码
 
@@ -109,7 +111,77 @@ pdm add -d <pkg>
 pdm update
 ```
 
+### anaconda
+
+scoop 安装 anaconda，或者也可以直接[下载安装包](https://www.anaconda.com/download)进行安装。
+
+```sh
+scoop install anaconda3
+```
+
+安装完成之后，就可以打开 anaconda navigator 了。这是一个图形化的程序，可以很方便的使用和配置 anaconda 的各项功能。
+
+使用 anaconda 命令管理 python 环境。
+
+```sh
+# 列出所有环境
+conda env list
+# 创建新环境
+conda create -n <name>
+# 创建环境时同时指定python版本
+conda create -n myenv python=3.9
+# 克隆一个环境
+conda create --name new --clone old
+# 激活新环境
+conda activate <name>
+```
+
+### IDE
+
+之前我一直很喜欢使用 PyCharm 作为 IDE，不过随着 vscode 的发力和 python 生态环境的完善，现在使用 vscode 配合开源组件的使用体验，已经完全不输于 PyCharm 这样的专业付费 IDE。
+
+vscode 安装扩展：
+
+- python，核心扩展
+- pylance，语言服务器
+- black formatter，非常流行的代码格式化扩展
+- flake8，linter 扩展，帮助分析并指出代码中可能存在的错误
+- isort，代码风格扩展，将导入类库排序
+- jupyter，一组扩展，在 vscode 中提供 jupyter 笔记本的支持
+- ruff，另一个 linter
+
+我的 vsocde 配置文件：
+
+```json
+{
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.downloadStubs": true,
+  "python.analysis.inlayHints.callArgumentNames": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.languageServer": "Pylance",
+  "python.linting.banditEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": true
+}
+```
+
+安装完成后，重启 vscode，打开一个 python 文件，应该就能看到效果了。点击右下角的 python 语言服务器的图标，开启类型检查，就能提供和静态语言类似的类型检查功能，更加增强代码的健壮性。
+
+执行代码的话有多种执行方式，第一种就是点击右上角的运行文件的图标，这样会在终端中执行文件，如果喜欢交互式的方式的话，也可以点击运行图标的第三个选项，这样就能在打开 REPL 在其中执行代码，更方便实时查看。第二种是将文件写成交互式笔记本的形式，如下所示。前面 扩展安装好之后，vscode 应该会自动识别这种样式，并按照笔记本的方式渲染，点击每个单元格上的执行按钮即可单独执行单元格的内容，并同时在右边的交互式窗格中显示结果。第三种方式就是直接使用 jupyter 笔记本，安装好 anaconda 的话，在 vscode 中创建`.ipynb`格式的文件，然后选择 anaconda 内核，即可在 vscode 中编辑笔记本。或者也可以在 anaconda 中打开网页端笔记本。
+
+```py
+#%%
+a = 1
+
+#%%
+b = 2
+```
+
 ## 学习
 
-- python 核心编程
+- 《python 核心编程》，口碑很好的一本 python 书
 - [python 官方教程](https://docs.python.org/3/tutorial/index.html)
+- [awesome-python](https://github.com/vinta/awesome-python)
